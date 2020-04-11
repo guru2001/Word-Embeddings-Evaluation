@@ -1,7 +1,7 @@
 from gensim.models import Word2Vec
 from smart_open import open
 import re
-file_name = "Stemming/Stem&cleaned1.txt"
+file_name = "test1.txt"
 f = open(file_name)
 data = f.read()
 
@@ -20,7 +20,7 @@ for line in data.split('\n'):
 
 sentences_ted = []
 for sent_str in sentences_strings_ted:
-	tokens = re.sub(r"[^a-z0-9]+", " ", sent_str.lower()).split()
+	tokens = sent_str.split()
 	sentences_ted.append(tokens)
 
 
@@ -33,4 +33,23 @@ down_sampling = 1e-2 #most frequently occurring word will be down-sampled by a n
 
 w2v_model = Word2Vec(sentences = sentences_ted,size=100, window=5, min_count=1, workers=4)
 
-print(w2v_model('కథనం'))
+print("అక్క")
+print(w2v_model.wv.most_similar("అక్క"))
+print("గుడ్డి")
+print(w2v_model.wv.most_similar("గుడ్డి"))
+print("ఆంగ్ల")
+print(w2v_model.wv.most_similar("ఆంగ్ల"))
+print("దృష్టి")
+print(w2v_model.wv.most_similar("దృష్టి"))
+print("అంతే")
+print(w2v_model.wv.most_similar("అంతే"))
+print("పెంచుకో")
+print(w2v_model.wv.most_similar("పెంచుకో"))
+print("సౌఖ్యంగా")
+print(w2v_model.wv.most_similar("సౌఖ్యంగా"))
+print("కొత్త")
+print(w2v_model.wv.most_similar("కొత్త"))
+print("కష్టం")
+print(w2v_model.wv.most_similar("కష్టం"))
+print("తాను")
+print(w2v_model.wv.most_similar("తాను"))
