@@ -50,7 +50,7 @@ for line in Lines :
         x=line.split()
         y=str(x[len(x)-1])
         if len(re.sub(r'[^\w\s]','', y))==1 :
-            line=line+'.'
+            line=line + '.'
             f3.write(line)
         else :
             f3.write(line+'\n')
