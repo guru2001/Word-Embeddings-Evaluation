@@ -1,0 +1,3 @@
+head -55000 te.txt | tail -25000 > raw_data_part2.txt # subset of the dataset 
+pass through the parser for stemmed output
+python3 parser2stemed.py # for rach sentence in one line 
